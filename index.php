@@ -75,24 +75,20 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 me-auto" dir="ltr">
+				<div class="col-md-4" dir="ltr">
 					<ul class="info">
-						<li ><span class="first-block">شسیبشسیب</span> <span class="secend-block">نام:</span></li>
-						<li><span class="first-block">Phone:</span><span class="second-block">09154777365</span></li>
-						<li><span class="first-block">Email:</span><span class="second-block">ahmad@gmail.com</span></li>
-						<li><span class="first-block">Address:</span><span class="second-block">Mashhad - Golbahar</span></li>
+						<li><span class="second-block">تلفن تماس:</span><span class="first-block"><?php echo file_get_contents("app/Storage/phoneNumber.txt");?></span></li>
+						<li><span class="second-block">ایمیل:</span><span class="first-block"><?php echo file_get_contents("app/Storage/email.txt"); ?></span></li>
+						<li><span class="second-block">آدرس:</span><span class="first-block"><?php echo file_get_contents("app/Storage/address.txt"); ?></span></li>
 					</ul>
 				</div>
-				<div class="col-md-8">
-					<h2>سلام</h2>
-					<p>There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries.</p>
-					<p>Far far away, behind the word mountains, Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci there live the blind texts from the countries Vokalia and Consonantia, there live the blind texts. Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci.</p>
+				<div class="col-md-8"  >
+					<h2 class="w-100 rigt"><?php echo file_get_contents("app/Storage/titleAboutMe.txt") ?></h2>
+                    <p><?php echo file_get_contents("app/Storage/descriptionAboutMe.txt"); ?></p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter2"></i></a></li>
-							<li><a href="#"><i class="icon-facebook3"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
+							<li><a href="<?php echo file_get_contents("app/Storage/telegram.txt"); ?>"><i class="icon-telegram"></i></a></li>
+							<li><a href="<?php echo file_get_contents("app/Storage/instagram.txt"); ?>"><i class="icon-instagram"></i></a></li>
 						</ul>
 					</p>
 				</div>
