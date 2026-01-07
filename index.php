@@ -1,3 +1,6 @@
+<?php
+require_once ("app/Config/connDB.php");
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -100,51 +103,40 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>My Resume</h2>
+					<h2>رزومه من</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0">
 					<ul class="timeline">
 						<li class="timeline-heading text-center animate-box">
-							<div><h3>Work Experience</h3></div>
+							<div><h3>تجربه کاری من</h3></div>
 						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Senior Developer</h3>
-									<span class="company">Company Name - 2016 - Current</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Junior Developer</h3>
-									<span class="company">Company Name - 2013 - 2015</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">UI/UX Designer</h3>
-									<span class="company">Company Name - 2010 - 2012</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</li>
+                        <?php
+                        $getWrokExperience =$conn->query("SELECT * FROM `work_experience`");
+                        $timeline="timeline-inverted";
+                        while($row = $getWrokExperience->fetch_row()){
+                            echo "<li class ='animate-box $timeline'>";
+                            echo "<div class='timeline-badge'><i class='icon-suitcase'></i></div>";
+                            echo "<div class='timeline-panel'>";
+                            echo "<div class='timeline-heading'>";
+                            echo "<h3 class='timeline-title'>$row[1]</h3>";
+                            echo "<span class='company'>$row[2]</span>";
+                            echo "</div>";
+                            echo "<div class='timeline-body'>";
+                            echo "<p>$row[3]</p>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</li>";
+                            if ($timeline=="timeline-inverted"){
+                                $timeline="timeline-unverted";
+                            }else{
+                                $timeline="timeline-inverted";
+                            }
+                        }
+                        ?>
+
+
 
 						<br>
 						<li class="timeline-heading text-center animate-box">
