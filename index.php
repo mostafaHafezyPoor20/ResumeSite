@@ -140,56 +140,32 @@ require_once ("app/Config/connDB.php");
 
 						<br>
 						<li class="timeline-heading text-center animate-box">
-							<div><h3>Education</h3></div>
+							<div><h3>تحصیلات</h3></div>
 						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Masters Degree</h3>
-									<span class="company">University Name - 2007 - 2009</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Bachelors Degree</h3>
-									<span class="company">University Name - 2002 - 2006</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Diploma Course</h3>
-									<span class="company">College Name - 1999 - 2001</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Graduation</h3>
-									<span class="company">College Name - 1994 - 1998</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</li>
+                        <?php
+                        $getEducation=$conn->query("SELECT * FROM `education`");
+                        $timelineEducation="timeline-inverted";
+                        while($row = $getEducation->fetch_row()){
+                            echo "<li class ='animate-box $timelineEducation'>";
+                            echo "<div class='timeline-badge'><i class='icon-graduation-cap'></i></div>";
+                            echo "<div class='timeline-panel'>";
+                            echo "<div class='timeline-heading'>";
+                            echo "<h3 class='timeline-title'>$row[1]</h3>";
+                            echo "<span class='company'>$row[2]</span>";
+                            echo "</div>";
+                            echo "<div class='timeline-body'>";
+                            echo  "<p>$row[3]</p>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</li>";
+                            if ($timelineEducation=="timeline-unverted"){
+                                $timelineEducation="timeline-inverted";
+                            }else{
+                                $timelineEducation="timeline-unverted";
+                            }
+                        }
+                        ?>
+
 			    	</ul>
 				</div>
 			</div>
