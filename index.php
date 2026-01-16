@@ -258,68 +258,27 @@ require_once ("app/Config/connDB.php");
 				</div>
 			</div>
 			<div class="row">
-                <div class="col-md-4">
-                    <div class="fh5co-blog animate-box">
-                        <a href="#" class="blog-bg" style="background-image: url(public/images/portfolio-1.jpg);"></a>
-                        <div class="blog-text">
-                            <span class="posted_on">Mar. 15th 2016</span>
-                            <h3><a href="#">Photoshoot On The Street</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            <ul class="stuff">
-                                <li><i class="icon-heart2"></i>600</li>
-                                <li><i class="icon-eye2"></i>750</li>
-                                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(public/images/portfolio-1.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Photoshoot On The Street</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(public/images/portfolio-2.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Surfing at Philippines</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(public/images/portfolio-3.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Capture Living On Uderwater</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
+                <?php 
+                $getAllBlog=$conn->query("SELECT * FROM `blog`");
+                while ($row = $getAllBlog->fetch_row()) {
+                    echo "<div class='col-md-4'>";
+                    echo "<div class='fh5co-blog animated-box'>";
+                    echo "<a href='#' class='blog-bg' style='background-image: url($row[1])'></a>";
+                    echo "<div class='blog-text'>";
+                    echo "<span class='posted_on'>$row[2]</span>";
+                    echo "<h3><a href='#'>$row[3]</a></h3>";
+                    echo "<p>$row[4]</p>";
+                    echo "<ul class='stuff'>";
+                    echo "<li><i class='icon-heart2'></i>$row[5]</li>";
+                    echo "<li><i class='icon-eye2'></i>$row[6]</li>";
+                    echo "<li><a href='#'>Read More<i class='icon-arrow-right2'></i></a></li>";
+                    echo "</ul>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                ?>
+
 	</div>
 	
 	<div id="fh5co-started" class="fh5co-bg-dark">

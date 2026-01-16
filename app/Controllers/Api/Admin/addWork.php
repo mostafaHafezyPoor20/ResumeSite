@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST["key"])&&isset($_POST["title"])&&isset($_POST["description"])&&$_FILES["image"]){
+if (isset($_POST["key"])&&isset($_POST["title"])&&isset($_POST["description"])&&isset($_FILES["image"])){
     require_once ("../../../Config/connDB.php");
     if($_POST["key"]==KEY){
         $title = $_POST["title"];
