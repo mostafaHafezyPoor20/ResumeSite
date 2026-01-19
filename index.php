@@ -286,9 +286,9 @@ require_once ("app/Config/connDB.php");
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Hire Me!</h2>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-					<p><a href="#" class="btn btn-default btn-lg">Contact Us</a></p>
+					<h2>ارتباط با من</h2>
+					<p>برای ارتباط با من میتونید از طریق فرم زیر اقدام کنید. در کمترین زمان باهاتون تماس میگیرم</p>
+					<p><a href="#" class="btn btn-default btn-lg">ارتباط با من</a></p>
 				</div>
 			</div>
 		</div>
@@ -299,38 +299,33 @@ require_once ("app/Config/connDB.php");
 			<div class="overlay"></div>
 		</div>
 		<div class="choose animate-box">
-			<h2>Contact</h2>
+			<h2>فرم تماس</h2>
 			<form action="#">
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+						<input type="text" id="fname" class="form-control" placeholder="نام">
 					</div>
 				</div>
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+						<input type="text" id="lname" class="form-control" placeholder="نام خانوادگی">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="email" class="form-control" placeholder="Your email address">
+						<input type="text" id="email" class="form-control" placeholder="تلفن تماس">
 					</div>
 				</div>
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
-					</div>
-				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="متن پیام شما . . ."></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<input type="submit" value="Send Message" class="btn btn-primary">
+					<input type="submit" value="ارسال پیام" class="btn btn-primary">
 				</div>
 
 			</form>	
