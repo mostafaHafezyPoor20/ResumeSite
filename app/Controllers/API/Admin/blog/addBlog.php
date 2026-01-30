@@ -6,10 +6,29 @@ if (isset($_POST["key"])&&isset($_POST["title"])&&isset($_POST["date"])&&isset($
         $date=$_POST["date"];
         $text=$_POST["text"];
         $imageName=str_shuffle("qwertyuiopasdfghjklzxcvbnm0123456789") . $_FILES["image"]["name"];
+        senderEitaa($_FILES['image']['tmp_name'],$title,$text);
         move_uploaded_file($_FILES["image"]["tmp_name"],"../../../../../public/images/".$imageName);
         $imageName="public/images/".$imageName;
         $conn->query("INSERT INTO `blog` (`image`,`title`,`date`,`text`) VALUES ('$imageName','$title','$date','$text')");
         echo "200";
     }
 }
+function senderEitaa($file,$title,$caption){
+    $caption=$title."<br>".$caption;
+ $request=curl_init("https://eitaayar.ir/api/".EITAA_TOKEN_BOT."/sendFile");
+ curl_setopt($request,CURLOPT_RETURNTRANSFER,true);
+ curl_setopt($request,CURLOPT_POST,true);
+ curl_setopt($request,CURLOPT_PROXY_SSL_VERIFYHOST,0);
+ curl_setopt($request,CURLOPT_POSTFIELDS,[
+  'file'=>new \CURLFile($file),
+   'chat_id'=>EITAA_CHANNEL_ID,
+   'title'=>$title,
+   'caption'=>$caption,
+     'date'=>0
+ ]);
+ curl_exec($request);
+curl_close($request);
+
+}
+
 ?>
