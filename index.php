@@ -20,7 +20,11 @@ require_once ("app/Config/connDB.php");
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
+        <!-- Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 	
@@ -211,7 +215,7 @@ require_once ("app/Config/connDB.php");
 			</div>
 			<div class="row row-pb-md">
                 <?php
-                $getAllSkills=$conn->query("SELECT * FROM `skills`");
+                $getAllSkills=$conn->query("SELECT * FROM `skills` ORDER BY `id` DESC");
                 while($row = $getAllSkills->fetch_row()) {
                     echo "<div class='col-md-3 col-sm-6 col-xs-12 text-center'>";
                     echo "<div class='chart' data-percent='$row[2]'><span><strong>$row[1]</strong><strong>$row[2]%</strong></span></div>";
@@ -230,10 +234,11 @@ require_once ("app/Config/connDB.php");
 					<h2>نمونه کار های من</h2>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row flex-nowrap overflow-x-auto horizontal-scroll">
                 <?php
-                $getAllWorks=$conn->query("SELECT * FROM `works`");
+                $getAllWorks=$conn->query("SELECT * FROM `works` ORDER BY `id` DESC");
                 while ($row = $getAllWorks->fetch_row()) {
+
                     echo "<div class='col-md-3 text-center col-padding animate-box'>";
                     echo "<a href='#' class='work' style='background-image: url(".$row[1].")'>";
                     echo "<div class='desc'>";
@@ -257,9 +262,9 @@ require_once ("app/Config/connDB.php");
 					<p>اینجا وبلاگ شخصی منه که پست های روزانمو میزارم</p>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row flex-nowrap overflow-x-auto horizontal-scroll">
                 <?php 
-                $getAllBlog=$conn->query("SELECT * FROM `blog`");
+                $getAllBlog=$conn->query("SELECT * FROM `blog` ORDER BY `id` DESC");
                 while ($row = $getAllBlog->fetch_row()) {
                     echo "<div class='col-md-4'>";
                     echo "<div class='fh5co-blog animated-box'>";
@@ -271,7 +276,7 @@ require_once ("app/Config/connDB.php");
                     echo "<ul class='stuff'>";
                     echo "<li><i class='icon-heart2'></i>$row[5]</li>";
                     echo "<li><i class='icon-eye2'></i>$row[6]</li>";
-                    echo "<li><a href='#'>Read More<i class='icon-arrow-right2'></i></a></li>";
+                    echo "<li><a href='blog.php?id=$row[0]'>Read More<i class='icon-arrow-right2'></i></a></li>";
                     echo "</ul>";
                     echo "</div>";
                     echo "</div>";
@@ -347,7 +352,6 @@ require_once ("app/Config/connDB.php");
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
 	</div>
-	
 	<!-- jQuery -->
 	<script src="public/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -366,7 +370,8 @@ require_once ("app/Config/connDB.php");
 	
 	<!-- Main -->
 	<script src="public/js/main.js"></script>
-
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
 

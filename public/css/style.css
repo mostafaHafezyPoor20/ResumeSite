@@ -18,6 +18,13 @@ body {
   color: #4d4d4d;
   background: #fff;
 }
+.horizontal-scroll{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.horizontal-scroll::-webkit-scrollbar{
+  display: none;
+}
 li,span,p{
   direction: rtl;
 }

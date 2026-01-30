@@ -147,3 +147,8 @@
 
 
 }());
+function openDialogImage(image){
+	document.getElementById("image").src=image;
+	var modal=new bootstrap.Modal(document.getElementById("dialogShowImage"));
+	modal.show();
+}
