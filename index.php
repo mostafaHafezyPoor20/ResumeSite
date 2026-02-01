@@ -293,7 +293,7 @@ require_once ("app/Config/connDB.php");
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>ارتباط با من</h2>
 					<p>برای ارتباط با من میتونید از طریق فرم زیر اقدام کنید. در کمترین زمان باهاتون تماس میگیرم</p>
-					<p><a href="#" class="btn btn-default btn-lg">ارتباط با من</a></p>
+					<p><a href="#send" class="btn btn-default btn-lg">ارتباط با من</a></p>
 				</div>
 			</div>
 		</div>
@@ -303,7 +303,7 @@ require_once ("app/Config/connDB.php");
 		<div class="video fh5co-video" style="background-image: url(public/images/cover_bg_1.jpg);">
 			<div class="overlay"></div>
 		</div>
-		<div class="choose animate-box">
+		<div class="choose animate-box" id="send">
 			<h2>فرم تماس</h2>
 			<form action="#">
 				<div class="row form-group">
