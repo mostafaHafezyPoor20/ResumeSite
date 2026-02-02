@@ -300,40 +300,39 @@ require_once ("app/Config/connDB.php");
 	</div>
 
 	<div id="fh5co-consult">
-		<div class="video fh5co-video" style="background-image: url(public/images/cover_bg_1.jpg);">
+		<div class="video fh5co-video" style="background-image: url(public/images/cover.jfif);">
 			<div class="overlay"></div>
 		</div>
 		<div class="choose animate-box" id="send">
 			<h2>فرم تماس</h2>
-			<form action="#">
-				<div class="row form-group">
-					<div class="col-md-6">
-						<input type="text" id="fname" class="form-control" placeholder="نام">
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-md-6">
-						<input type="text" id="lname" class="form-control" placeholder="نام خانوادگی">
-					</div>
-				</div>
+            <form dir="rtl">
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<input type="text" id="email" class="form-control" placeholder="تلفن تماس">
-					</div>
-				</div>
+                <!-- Name -->
+                <div class="mb-3">
+                    <label class="form-label">نام و نام خانوادگی</label>
+                    <input type="text" class="form-control" placeholder="نام خود را وارد کنید">
+                </div>
 
+                <!-- Phone -->
+                <div class="mb-3">
+                    <label class="form-label">شماره تماس</label>
+                    <input type="tel" class="form-control" placeholder="09xxxxxxxxx">
+                </div>
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="متن پیام شما . . ."></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<input type="submit" value="ارسال پیام" class="btn btn-primary">
-				</div>
+                <!-- Message -->
+                <div class="mb-4">
+                    <label class="form-label">پیام شما</label>
+                    <textarea rows="4" class="form-control" placeholder="متن پیام خود را بنویسید"></textarea>
+                </div>
 
-			</form>	
+                <!-- Submit -->
+                <div class="d-grid mt-4 w-100" style="margin-top: 20px;width: 100%" dir="rtl">
+                    <button type="submit" class="btn btn-submit w-100">
+                        ارسال پیام
+                    </button>
+                </div>
+
+            </form>
 		</div>
 	</div>
 

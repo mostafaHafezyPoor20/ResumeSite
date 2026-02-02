@@ -1299,5 +1299,31 @@ input[type="text"] {
 .js .animate-box {
   opacity: 0;
 }
+body {
+  font-family: Vazirmatn, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #e9ecef);
+}
+
+.contact-card {
+  max-width: 500px;
+  margin: auto;
+  border-radius: 16px;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.btn-submit {
+  background-color: #eea236;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #eea236;
+}
 
 /*# sourceMappingURL=style.css.map */
