@@ -1325,5 +1325,10 @@ body {
 .btn-submit:hover {
   background-color: #eea236;
 }
-
+.modal{
+  z-index: 1055 !important;
+}
+.modal-backdrop{
+  z-index: 1050 !important;
+}
 /*# sourceMappingURL=style.css.map */

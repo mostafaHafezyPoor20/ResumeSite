@@ -147,8 +147,33 @@
 
 
 }());
-function openDialogImage(image){
-	document.getElementById("image").src=image;
-	var modal=new bootstrap.Modal(document.getElementById("dialogShowImage"));
-	modal.show();
+
+function sendMessage(){
+	const name=document.getElementById("name").value;
+	const phoneNumber=document.getElementById("phoneNumber").value;
+	const message=document.getElementById("message").value;
+	if (name.toString().trim()===""){
+		document.getElementById("textError").innerText="نام نمیتواند خالی باشد";
+		$('#errorModal').modal('show');
+	}else if (phoneNumber.toString().trim()===""){
+		document.getElementById("textError").innerText="شماره تماس نمیتواند خالی باشد";
+		$('#errorModal').modal('show');
+	}else if (message.toString().trim()===""){
+		document.getElementById("textError").innerText="متن پیام نمیتواند خالی باشد";
+		$('#errorModal').modal('show');
+	}else{
+		const xhttp=new XMLHttpRequest();
+		xhttp.open("POST","app/Controllers/API/Site/sendMessage.php");
+		xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xhttp.send("name="+encodeURIComponent(name)+"&phoneNumber="+encodeURIComponent(phoneNumber)+"&message="+encodeURIComponent(message));
+		xhttp.onload=function(){
+			if (xhttp.responseText==="200"){
+				document.getElementById("name").value="";
+				document.getElementById("phoneNumber").value="";
+				document.getElementById("message").value="";
+				$('#successModal').modal('show');
+			}
+	}
+
+  }
 }

@@ -300,44 +300,41 @@ require_once ("app/Config/connDB.php");
 	</div>
 
 	<div id="fh5co-consult">
-		<div class="video fh5co-video" style="background-image: url(public/images/cover.jfif);">
+		<div class="video fh5co-video" style="background-image: url(public/images/cover.png);">
 			<div class="overlay"></div>
 		</div>
 		<div class="choose animate-box" id="send">
 			<h2>فرم تماس</h2>
-            <form dir="rtl">
+            <div dir="rtl">
 
                 <!-- Name -->
                 <div class="mb-3">
                     <label class="form-label">نام و نام خانوادگی</label>
-                    <input type="text" class="form-control" placeholder="نام خود را وارد کنید">
+                    <input type="text" id="name" class="form-control" placeholder="نام خود را وارد کنید">
                 </div>
 
                 <!-- Phone -->
                 <div class="mb-3">
                     <label class="form-label">شماره تماس</label>
-                    <input type="tel" class="form-control" placeholder="09xxxxxxxxx">
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="09xxxxxxxxx">
                 </div>
 
                 <!-- Message -->
                 <div class="mb-4">
                     <label class="form-label">پیام شما</label>
-                    <textarea rows="4" class="form-control" placeholder="متن پیام خود را بنویسید"></textarea>
+                    <textarea rows="4" id="message" class="form-control" placeholder="متن پیام خود را بنویسید"></textarea>
                 </div>
 
                 <!-- Submit -->
                 <div class="d-grid mt-4 w-100" style="margin-top: 20px;width: 100%" dir="rtl">
-                    <button type="submit" class="btn btn-submit w-100">
+                    <button type="submit" class="btn btn-submit w-100" style="background-color:#eea236;" onclick="sendMessage()">
                         ارسال پیام
                     </button>
                 </div>
 
-            </form>
+            </div>
 		</div>
 	</div>
-
-
-	
 	<div id="fh5co-footer">
 		<div class="container">
 			<div class="row">
@@ -366,11 +363,55 @@ require_once ("app/Config/connDB.php");
 	<!-- Google Map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
 	<script src="public/js/google_map.js"></script>
-	
 	<!-- Main -->
 	<script src="public/js/main.js"></script>
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+            <!--DIALOG SUCCESS SEND MESSAGE-->
+            <div class="modal fade" id="successModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" style="margin-top: 15%;">
+                    <div class="modal-content" style="text-align: center;padding: 30px 20px;border-radius: 8px;">
+
+                        <!-- Icon -->
+                        <i class="bi bi-check-circle-fill" style="font-size: 60px;color: #eea236;margin-bottom: 15px;"></i>
+
+                        <!-- Title -->
+                        <h4 class="modal-title" style=" font-weight: bold;margin-bottom: 10px;">پیام شما را دریافت کردیم</h4>
+
+                        <!-- Description -->
+                        <p class="modal-desc" style=" color: #777;margin-bottom: 25px;">
+                          پیام شمارو دریافت کردم . در اولین فرصت با شماره ایی که برام گذاشتین با شما تماس میگیرم
+                        </p>
+
+                        <!-- Button -->
+                        <button class="btn w-100 text-white" style="border-radius: 12px;background-color:#eea236" data-dismiss="modal">
+                            متوجه شدم
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <!--DIALOG SUCCESS SEND MESSAGE-->
+            <!--DIALOG ERROR-->
+            <div class="modal fade" id="errorModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" style="margin-top: 15%;">
+                    <div class="modal-content" style="text-align: center;padding: 30px 20px;border-radius: 8px;">
+
+                        <!-- Icon -->
+                        <i class="bi bi-emoji-frown" style="font-size: 60px;color: #c80c0c;margin-bottom: 15px;"></i>
+
+                        <!-- Title -->
+                        <h4 class="modal-title" id="textError" style=" font-weight: bold;margin-bottom: 10px;">پیام شما را دریافت کردیم</h4>
+
+                        <!-- Button -->
+                        <button class="btn w-100 text-white" style="border-radius: 12px;background-color:#c80c0c" data-dismiss="modal">
+                            متوجه شدم
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <!--DIALOG ERROR-->
 	</body>
+
 </html>
 
