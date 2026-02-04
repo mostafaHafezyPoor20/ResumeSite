@@ -335,10 +335,10 @@ require_once ("app/Config/connDB.php");
             </div>
 		</div>
 	</div>
-	<div id="fh5co-footer">
+	<div id="fh5co-footer text-center">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 text-center mt-5">
 					<p> All rights reserved to <a href="https://t.me/iranire" target="_blank"> Mostafa Hafezipour &copy;</a></p>
 				</div>
 			</div>

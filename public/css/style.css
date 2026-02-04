@@ -1331,4 +1331,49 @@ body {
 .modal-backdrop{
   z-index: 1050 !important;
 }
+
+.footer-material {
+  background-color: #eea236;
+  color: #fff;
+  padding: 50px 0 20px;
+  margin-top: 60px;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 13px;
+  opacity: 0.85;
+}
 /*# sourceMappingURL=style.css.map */
