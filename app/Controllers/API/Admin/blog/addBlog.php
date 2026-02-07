@@ -6,15 +6,19 @@ if (isset($_POST["key"])&&isset($_POST["title"])&&isset($_POST["date"])&&isset($
         $date=$_POST["date"];
         $text=$_POST["text"];
         $imageName=str_shuffle("qwertyuiopasdfghjklzxcvbnm0123456789") . $_FILES["image"]["name"];
-        senderEitaa($_FILES['image']['tmp_name'],$title,$text);
         move_uploaded_file($_FILES["image"]["tmp_name"],"../../../../../public/images/".$imageName);
         $imageName="public/images/".$imageName;
         $conn->query("INSERT INTO `blog` (`image`,`title`,`date`,`text`) VALUES ('$imageName','$title','$date','$text')");
+        senderBale("../../../../../".$imageName,$title,$text);
+        senderEitaa("../../../../../".$imageName,$title,$text);
         echo "200";
     }
 }
 function senderEitaa($file,$title,$caption){
-    $caption=$title."<br>".$caption;
+    $caption=$title.
+        "
+        "
+        .$caption;
  $request=curl_init("https://eitaayar.ir/api/".EITAA_TOKEN_BOT."/sendFile");
  curl_setopt($request,CURLOPT_RETURNTRANSFER,true);
  curl_setopt($request,CURLOPT_POST,true);
@@ -31,4 +35,18 @@ curl_close($request);
 
 }
 
+function senderBale($file,$title,$description){
+    $caption=$title."
+    ".$description;
+    $request=curl_init("https://tapi.bale.ai/bot".BALE_TOKEN_BOT."/sendPhoto");
+    curl_setopt($request,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($request,CURLOPT_POST,true);
+    curl_setopt($request,CURLOPT_POSTFIELDS,[
+        "chat_id"=>BALE_CHANNEL_ID,
+        "photo"=>new \CURLFile($file),
+        "caption"=>$caption
+    ]);
+    curl_exec($request);
+    curl_close($request);
+}
 ?>
