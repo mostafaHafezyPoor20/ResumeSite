@@ -1,4 +1,7 @@
 <?php
+require_once ("../../../../../vendor/autoload.php");
+use RubikaBot\Bot;
+
 if (isset($_POST["key"])&&isset($_POST["title"])&&isset($_POST["date"])&&isset($_POST["text"])&&isset($_FILES["image"])){
    require_once("../../../../Config/connDB.php");
     if ($_POST["key"]==KEY){
@@ -11,6 +14,7 @@ if (isset($_POST["key"])&&isset($_POST["title"])&&isset($_POST["date"])&&isset($
         $conn->query("INSERT INTO `blog` (`image`,`title`,`date`,`text`) VALUES ('$imageName','$title','$date','$text')");
         senderBale("../../../../../".$imageName,$title,$text);
         senderEitaa("../../../../../".$imageName,$title,$text);
+        senderRubika("../../../../../".$imageName,$title,$text);
         echo "200";
     }
 }
@@ -48,5 +52,14 @@ function senderBale($file,$title,$description){
     ]);
     curl_exec($request);
     curl_close($request);
+}
+function senderRubika($file,$title,$description){
+    $caption=
+        $title
+        ."
+        "
+        .$description;
+    $bot=new Bot(RUBIKA_TOKEN_BOT);
+    $bot->chat(RUBIKA_CHANNEL_ID)->file($file)->caption($caption)->sendFile();
 }
 ?>

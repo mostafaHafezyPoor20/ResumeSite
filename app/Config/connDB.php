@@ -11,6 +11,10 @@ define("EITAA_TOKEN_BOT","bot67363:e183e060-d00d-457b-8bb4-de37f1a8da64");
 define("BALE_TOKEN_BOT","606786084:C5S7wfniXcau_TFzOkRZiVxgcjJZf5huZqU");
 define("BALE_CHANNEL_ID","@ahmmadtest");
 
+//RUBIKA
+define("RUBIKA_TOKEN_BOT","GJFBG0RNKNQHTMSHGFSOWOPCDQFQUFKQHDJTZNYACUNEDQTPBOGMWPZHRKQIVJKN");
+define("RUBIKA_CHANNEL_ID","c0DGXd807010465629bba313a6bcd9ba");
+
 $servername="localhost";
 $username="root";
 $password="";
