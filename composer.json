@@ -1,5 +1,8 @@
 {
     "require": {
-        "rubikabot/rubikabot": "dev-main"
+        "rubikabot/rubikabot": "dev-main",
+        "guzzlehttp/guzzle": "^7.10",
+        "firebase/php-jwt": "^7.0",
+        "google/apiclient": "^2.19"
     }
 }

@@ -9,6 +9,8 @@ if (isset($_POST["name"])&&isset($_POST["phoneNumber"])&&isset($_POST["message"]
         $stmt->bind_param("sss",$name,$phoneNumber,$message);
         $stmt->execute();
         $stmt->close();
+        $key=urlencode(KEY);
+        file_get_contents(WEB_ADDRESS."app/Controllers/API/Admin/notification/sendNotficationNewMessage.php?key=$key");
         echo "200";
     }
 }
