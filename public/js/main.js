@@ -167,6 +167,7 @@ function sendMessage(){
 		xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		xhttp.send("name="+encodeURIComponent(name)+"&phoneNumber="+encodeURIComponent(phoneNumber)+"&message="+encodeURIComponent(message));
 		xhttp.onload=function(){
+			console.log(xhttp.responseText);
 			if (xhttp.responseText==="200"){
 				document.getElementById("name").value="";
 				document.getElementById("phoneNumber").value="";
