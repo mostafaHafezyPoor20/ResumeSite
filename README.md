@@ -12,4 +12,16 @@ this website is connected to a dedicated Android Admin panel for content managem
 ### About Me
 <img width="1883" height="883" alt="aboutMe" src="https://github.com/user-attachments/assets/fab333e5-a7e0-45c3-ade7-76991567e0cd" />
 
+### My Resume 
+<img width="1915" height="930" alt="MyResume" src="https://github.com/user-attachments/assets/83f81ba8-c45c-4e7e-9ec1-07481f4b3f33" />
+
+### Skills
+<img width="1899" height="901" alt="skills" src="https://github.com/user-attachments/assets/c1e74b95-742a-452a-ab7d-459ab4ce5507" />
+
+### Works
+<img width="1905" height="849" alt="works" src="https://github.com/user-attachments/assets/d42ca5e0-437f-42e3-a9d4-452b8f142923" />
+
+
+
+
 
