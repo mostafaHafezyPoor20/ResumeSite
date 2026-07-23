@@ -63,5 +63,6 @@ LINK GIT APP
 ```
 ResumeSite/
 |
-|
+|--- app
+|--- public
 ```
