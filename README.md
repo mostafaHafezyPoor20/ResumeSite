@@ -9,3 +9,7 @@ this website is connected to a dedicated Android Admin panel for content managem
 ### Home Page
  <img width="1899" height="923" alt="homePage" src="https://github.com/user-attachments/assets/4000f8d1-07cf-406f-a5a7-8659317bf71d" />
 
+### About Me
+<img width="1883" height="883" alt="aboutMe" src="https://github.com/user-attachments/assets/fab333e5-a7e0-45c3-ade7-76991567e0cd" />
+
+
