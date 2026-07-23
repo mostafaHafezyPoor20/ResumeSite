@@ -37,7 +37,31 @@ this website is connected to a dedicated Android Admin panel for content managem
 - send new sample work and post weblog post to rubika,eitaa,bale channels
 - send notfication for admin site (dedicated Android Admin Panel) after send new message in site
 
+## Technologies Used
+ - HTML
+ - SCSS
+ - CSS
+ - PHP
+ - JavaScript
 
 
+ ## Related Project
+this website is managed through a dedicated Android application.
+Android Admin Panel:
+LINK GIT APP
+
+## Installation
+1. Clone the repository
+2. Move the project to your web server.
+3. Create a MySQL database
+4. Import the database file.
+5. Configure database credentials
+6. run the project
 
 
+## Project Structure 
+```
+ResumeSite/
+|
+|
+```
