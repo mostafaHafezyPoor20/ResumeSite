@@ -59,10 +59,4 @@ LINK GIT APP
 6. run the project
 
 
-## Project Structure 
-```
-ResumeSite/
 
- public/
- congig/
-```
