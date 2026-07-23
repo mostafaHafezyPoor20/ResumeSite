@@ -62,7 +62,7 @@ LINK GIT APP
 ## Project Structure 
 ```
 ResumeSite/
-|
-|--- app
-|--- public
+
+ public/
+ congig/
 ```
