@@ -34,6 +34,8 @@ this website is connected to a dedicated Android Admin panel for content managem
 - Sample Works section
 - Weblog section
 - Contact Us section
+- send new sample work and post weblog post to rubika,eitaa,bale channels
+- send notfication for admin site (dedicated Android Admin Panel) after send new message in site
 
 
 
